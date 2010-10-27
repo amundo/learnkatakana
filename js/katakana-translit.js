@@ -116,7 +116,6 @@ t = t.replace(/a/g, "ア")
 */
 
 function katakana2utf8(t) {
-  if (document.getElementById("x").checked) {
 	t = t.replace(/pp/g, ";p")
 	t = t.replace(/bb/g, ";b")
 	t = t.replace(/tt/g, ";t")
@@ -245,6 +244,5 @@ function katakana2utf8(t) {
     document.getElementById("q").value=t;
 
     document.getElementById("qq").value=t;
-  }
 }
 

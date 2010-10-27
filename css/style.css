@@ -12,13 +12,34 @@ h1{
 }
 
 
+h1 input { 
+  float:right;
+  font-size:x-large;
+  line-height: 100px;
+  margin-right: 1em;
+  margin-top: 25px;
+}
+
 #main { 
-  padding: 1em;
+  overflow:auto;
+}
+
+#narration { 
+  width: 40%; 
+  float:left;
 }
 
 table#katakana { 
   font-size: x-large;
   width: 40%;
   float:right;
-  background:#fefefe;
+  background:#ccc;
+}
+
+table#katakana a { 
+  text-decoration: none;
+}
+
+table#katakana a:hover { 
+  background-color: yellow;
 }
