@@ -25,6 +25,9 @@ h1 input {
 }
 
 #narration { 
+  padding: 2em;
+  font-size: large;
+  line-height: 120%;
   width: 40%; 
   float:left;
 }
@@ -33,7 +36,7 @@ table#katakana {
   font-size: x-large;
   width: 40%;
   float:right;
-  background:#ccc;
+  background:#fff;
 }
 
 table#katakana a { 
