@@ -5,9 +5,20 @@ body {
 }
 
 h1{ 
-
+  height: 110px;
+  line-height: 100px;
+  padding-left: 120px;
+  background: url(../img/icon.png) 10px no-repeat;
 }
+
 
 #main { 
   padding: 1em;
+}
+
+table#katakana { 
+  font-size: x-large;
+  width: 40%;
+  float:right;
+  background:#fefefe;
 }
