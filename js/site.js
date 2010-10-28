@@ -16,7 +16,7 @@ $(function(){
     $this = $(this);
 
     var unconverted = $this.val(),
-        converted = convert(unconverted, jp_Kata); 
+        converted = convert(unconverted, ja_Kana); 
 
     $this.val(converted);  
 

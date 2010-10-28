@@ -1,5 +1,5 @@
 
-var jp_Kata = [
+var ja_Kana = [
  [';', 'ッ'],
   ['tsu', 'ツ'],
  ['shu', 'シュ'],
