@@ -36,6 +36,11 @@ h4 {
   overflow:auto;
 }
 
+#demo { 
+  float:right;
+  width: 40%;
+}
+
 #narration { 
   padding: 2em;
   font-size: large;
@@ -57,4 +62,10 @@ table#katakana a {
 
 table#katakana a:hover { 
   background-color: yellow;
+}
+
+blockquote  {
+  border: 1px dotted black;
+  padding: 1em; 
+  font-size: small;
 }
