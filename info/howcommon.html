@@ -8,9 +8,9 @@
   <link type="text/css" href="../css/style.css" rel="stylesheet" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-  <script type=text/javascript src=js/jquery.js> </script>
-  <script type=text/javascript src=js/ja-Kata-table.js> </script>
-  <script type=text/javascript src=js/site.js> </script>
+  <script type=text/javascript src=../js/jquery.js> </script>
+  <script type=text/javascript src=../js/ja-Kata-table.js> </script>
+  <script type=text/javascript src=../js/site.js> </script>
 
 </head>
 
@@ -31,20 +31,33 @@
 
   <p>The bits highlighted in yellow are Katakana. After a while, believe it or not, those characters will jump out at your eyes when you look at Japanese text. They have a distinct style about them compared to the other characters used in Japanese.</p>
 
-  <p>It is not at all uncommon to see this many Katakana words appear in running text. You can test this theory yourself. Click and drag the "katakana" link on the right to the bookmark bar in your browser, and then go to a random page on the Japanese Wikipedia. (<a title="Random page on the Japanese Wikipedia" href="http://ja.wikipedia.org/wiki/Special:Random?uselang=en">This link goes to a random page on the Japanese Wikipedia</a>.)  Then click your new bookmarklet button, and you'll see what I mean. </p>
+  <p>It is not at all uncommon to see this many Katakana words appear in running text. You can test this theory yourself. If you're using Firefox or Chrome, you can click and drag the "katakana" link on the right to the bookmark bar in your browser, and then go to a random page on the Japanese Wikipedia. (<a title="Random page on the Japanese Wikipedia" href="http://ja.wikipedia.org/wiki/Special:Random?uselang=en">This link goes to a random page on the Japanese Wikipedia</a>.)  Then click your new bookmarklet button, and you'll see what I mean. </p>
 
   <p>Come back here when you're convinced how common Katakana words are in Japanese, we'll wait...</p>
+
+<p>Next: <a href="howtolearn.html">Okay then. How should I go about learning them?</a></p>
 
   <h4><a href="..">home</a></h4>
 
   </div><!-- #narration -->
 
+<script>
+$(document).ready(function(){
+
+  $('blockquote').load('http://ja.wikipedia.org/wiki/Special:Random', function(res){ })
+})
+</script>
 <div id=demo>
   <h2><a href="javascript:var katakanaRE=/([ァ-ンー]+)/gi;var hiraganaRE=/([ぁ-ん]+)/gi;var lengthmarkRE=/([ー]+)/gi;function HL(node){if(node.hasChildNodes){var hi_cn;for(hi_cn=0;hi_cn<node.childNodes.length;hi_cn++){HL(node.childNodes[hi_cn]);}}if(node.nodeType==3){var tempNodeVal=node.nodeValue;if(katakanaRE.test(tempNodeVal)){tempNodeVal=tempNodeVal.replace(katakanaRE,'<span style=\'background-color:yellow;color:black;border:1px solid black;\'>$1</span>');newNode=document.createElement('span');newNode.innerHTML=tempNodeVal;pn=node.parentNode;pn.replaceChild(newNode,node);}}}HL(window.document.getElementsByTagName('body')[0]);">katakana</a></h2>
+
 <blockquote>
 <p>エリオット・スミス（Steven Paul "Elliott" Smith, 1969年8月6日 - 2003年10月21日）は1990年代から2000年代前半にかけて活動したアメリカ合衆国のシンガーソングライター。</p>
 
 <p>オルタナティブロックバンド、ヒートマイザーの一員として活動中の1994年にソロデビュー。1997年の映画「グッド・ウィル・ハンティング」に提供した楽曲「Miss Misery」がアカデミー歌曲賞にノミネートされたことで一躍脚光を浴びる。</p>
+
+<p>6枚目のアルバムを制作中であった2003年10月21日、カリフォルニア州ロサンゼルスの自宅で胸に負った2箇所の刺し傷により死亡。死の要因が自殺であるのか、他殺であるのかは今もわかっていない。</p>
+
+<p>ローリング・ストーン誌の2007年11月号の企画、「ローリング・ストーンの選ぶ歴史上最も過小評価されている25人のギタリスト」において第23位。</p>
 </blockquote>
 </div><!-- #demo -->
 
