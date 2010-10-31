@@ -1,0 +1,37 @@
+How to build a letter-learning chrestomathy with Python
+
+A chrestomathy is a programmatic introduction to learning something. The premise is that you order what you're trying to learn in such a way that later efforts build on previous efforts. So you learn efficiently.   
+
+Learning, of course, is a super complicated thing. So figuring out just what an "efficient" ordering is, or even whether it's possible to create an "efficient" ordering, is a matter upon which I am in no way qualified to opine. But talking turkey: if you're trying to learn a bunch of stuff, regardless of theory, you're going to have to come up with _some_  path through that stuff. So much for justifications...
+
+Suppose you are trying to learn to read a new alphabet. Letters are in and of themselves meaningless. At least for me, trying to memorize the letters flashcard-style, by rote, doesn't really stick. It's a useful first step, but the real goal is to start reading meaningful words. Words are interesting, and interesting things stick.
+
+We want to get to the point where we can read words, but we want to restrict ourselves to words containing letters we already know.  
+
+So, here's a plan. 
+
+1. Get a bunch of text in the alphabet in question. 
+2. From the text, make:
+   a. A list of all the letters 
+   b. A list of all the words 
+3. Tally up the occurrence of each letter (call this `letter_tally`)
+4. Sort the letters according to this tally. (`letters_by_tally`)
+
+
+Let's stop here and give an example; we'll try some Greek text, since Greek is written in algebra and we all speak algebra. (Hur, hur.)
+
+%includecode step1-4.py
+
+So in order of decreasing frequency in our little text, the letters are: ` αιτοκνερσλςηυάόμωπγήέδί,ύχφθ.ζΤβΕΑ:)(ώψξΣΠΟΘΗΈ»«][`. 
+
+Now that we have a list in `letters_by_tally`, we have a plan of attack. We will first learn all the words that contain only `α` (if there is such a word, but it's all Greek to me...). Then we'll learn all the words that contain only `α` or `ι`, then only `α` or `ι` or `τ`, and so on. We can call each such set of letters a "level."  
+
+5. Generate levels 
+
+%includecode step5.py
+
+Now we need a way to determine which level a word is "in." 
+
+We can visualize the process like this:
+
+
