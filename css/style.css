@@ -88,3 +88,16 @@ dt {
 dd { 
   margin-top: .6em;
 }
+
+#level { 
+  text-align: center;
+}
+#level li { 
+  list-style-type: none;
+  margin: 1em;
+}
+
+#level li a { 
+  text-decoration: none;
+  font-size: xx-large; 
+}
