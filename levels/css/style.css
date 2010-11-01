@@ -1,1 +1,25 @@
 @import url('../../css/style.css');
+
+h1 {
+  background: none;
+  padding: 0 10px;
+  margin: 0;
+  line-height: 1.5em;
+  float: left;
+}
+
+h1 span.new_letter { 
+  color: red;
+}
+
+h2  {
+  float: right;
+  width: 20%;
+  color: #666;
+  font-size: small;
+}
+
+ol#level { 
+  clear:both;
+
+} 
