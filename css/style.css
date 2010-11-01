@@ -11,6 +11,14 @@ h1{
   background: url(../img/icon.png) 10px no-repeat;
 }
 
+h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+h1:hover {
+  cursor: pointer;
+}
 
 h1 input { 
   float:right;
@@ -89,15 +97,3 @@ dd {
   margin-top: .6em;
 }
 
-#level { 
-  text-align: center;
-}
-#level li { 
-  list-style-type: none;
-  margin: 1em;
-}
-
-#level li a { 
-  text-decoration: none;
-  font-size: xx-large; 
-}
