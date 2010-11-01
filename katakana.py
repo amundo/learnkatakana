@@ -39,7 +39,7 @@ def rank_words(words, levels):
 
 def list_to_html(li):
   html = []
-  for e in li: html.append('<li><a href=http://ja.wikipedia.org/wiki/' + e.replace(' ', '_') + '>' + e + '</a></li>')
+  for e in li: html.append('<li><a target=_blank href=http://ja.wikipedia.org/wiki/' + e.replace(' ', '_') + '>' + e + '</a></li>')
   return '\n'.join(html)
 
 if __name__ == "__main__":
