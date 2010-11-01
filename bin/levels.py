@@ -53,7 +53,6 @@ def rank_word(word, levels):
 
 if __name__ == "__main__":
   import fileinput
-  content = 'aaabbc'
   content = ''.join([line.decode('utf-8') for line in fileinput.input()]).replace('\n','')
   levels = sort_into_levels(content)
   words = tokenize(content)
