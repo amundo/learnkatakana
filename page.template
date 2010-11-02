@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>${page_title}</title>
   <meta charset=utf-8>
     <meta property="og:title" content="Learn Katakana"/>
     <meta property="og:description" content="Learn Katakana"/>
@@ -13,7 +13,15 @@
   <link rel=stylesheet href="css/print.css" media=print />
 </head>
 <body>
-
+<nav>
+<a id=home href=..>home</a> 
+<a class=prev href=${prev}.html>${prev}</a> 
+<strong><span class=new_letter>${new_letter}</span></strong> 
+<a class=next href=${next}.html>${next}</a> 
+<span id=sofar>${sofar}</span>
+</nav>
+<ol id=level>
+${wordlist}
 </body>
 
 </html>

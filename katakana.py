@@ -1,9 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import re
 import sys
+import json
 from collections import defaultdict
 
-def uptos(seq):
- return [''.join(seq[:i]) for i in range(1,len(seq)+1)]
 
 def freq(seq):
  fq = {}
@@ -17,62 +18,52 @@ def sorted_by_freq(seq):
  commonest =  ''.join([k for v,k in sorted(byfq, reverse=True)])
  return commonest 
 
-def regexify(pattern):
-  return re.compile('^[' + pattern + ']+$')
+def regexify(prefix):
+  return re.compile('^[' + prefix + ']+$')
 
-def make_ranking(words):
+def make_levels(words):
   levels = []
   commonest_letters = sorted_by_freq(''.join(words))
-  for key in uptos(commonest_letters):
-    key = ''.join(sorted(key))
-    levels.append( (key, regexify(key), [])  )
+  for i in range(1, len(commonest_letters)+1):
+    prefix = commonest_letters[:i]
+    regex =  regexify(prefix)
+    level = { 
+      'new_letter' :  prefix[-1],
+      'sofar' :  prefix,
+      'number' :  "%.2d" % i,
+      'next' :  "%.2d" % (i+1),
+      'prev' :  "%.2d" % (i-1),
+      'wordlist' :  [word for word in words if len(word) < 10 and regex.match(word)][:40]
+    }
+    levels.append( level )
+  for level in levels: print len(level['wordlist'])
   return levels
 
-def rank_words(words, levels):
-  ranking = defaultdict(list)
-  for word in words:
-    for key, matcher, matched in levels:
-      if matcher.match(word): 
-        matched.append(word) 
-        break
-  return levels
+def read_romaji2katakana(jsonfile='katakana.json'):
+  rules = json.loads(open(jsonfile).read().decode('utf-8'))
+  return dict(rules)
 
-def list_to_html(li):
-  html = []
-  for e in li: html.append('<li><a target=_blank href=http://ja.wikipedia.org/wiki/' + e.replace(' ', '_') + '>' + e + '</a></li>')
-  return '\n'.join(html)
+def convert_to_kana(romaji):
+  return ruledict[romaji]
+
 
 if __name__ == "__main__":
+
+  from string import Template 
   text = sys.stdin.read().decode('utf-8').replace('\n', ' ')
-  levels = make_ranking(text)
+
+  page_template = Template(open('page.template').read().decode('utf-8'))
+  word_template = Template(open('word.template').read().decode('utf-8'))
+
   words = text.split()
-  levels = rank_words(words, levels)
-  current = set(levels[0][0])
+  levels = make_levels(words)
 
-  for i, (key, regex, words)  in enumerate(levels):
-    wrapper = open('page.template').read().decode('utf-8')
-    wrapper = wrapper.replace('<body>', '<body>%s')
+  for level in levels:  
+    level['page_title'] = 'Learn Katakana: ' + level['new_letter']
+    level['wordlist'] = '\n'.join([word_template.substitute(word=w) for w in level['wordlist']])
+    page = page_template.safe_substitute(level) 
 
-    previous = current
-    current = set(key)
-    new_letters = ' '.join(current - previous)
-
-    prev = "%.2d" % (int(i)-1)
-    next = "%.2d" % (int(i)+1)
-
-    sofar = "<a id=sofar>" + ''.join(previous) + "</a>"
-
-    nav = "<nav><a id=home href=..>home</a> <a class=prev href=" + prev + ".html>%s</a> <strong>Level %d</strong> <a  class=next href=" + next + ".html>%s</a> " + sofar + "</nav>" 
-    nav = nav % (prev, i, next)
-   
-    
-    page = nav + u"<h1>Level %d: <span class=new_letter>%s</span></h1>\n<ol id=level>%s</ol>"
-    
-    wordlist = list_to_html(words)
-    page = page % (i, new_letters, wordlist)
-  
-    out = open("levels/%.2d.html" % i, 'w')
-    page = wrapper % page 
+    outfile = "levels/%s.html" % level['number']
+    out = open(outfile, 'w')
     out.write(page.encode('utf-8'))
     out.close()
-  

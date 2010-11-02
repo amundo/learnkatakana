@@ -8,7 +8,7 @@ h1 {
   float: left;
 }
 
-h1 span.new_letter { 
+span.new_letter { 
   background: white;
   padding: 7px;
   -moz-border-radius: 3px;
@@ -45,6 +45,8 @@ ol#level {
 }
 
 nav {
+  background: -moz-linear-gradient(center top , yellow , #dede00);
+  border-bottom: 1px solid #cdcd00;
   margin: 0 auto 4px;  
   overflow:auto;
   text-align: center;  
