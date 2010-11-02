@@ -59,12 +59,14 @@ if __name__ == "__main__":
 
     prev = "%.2d" % (int(i)-1)
     next = "%.2d" % (int(i)+1)
-    nav = "<nav><a id=home href=..>home</a> <a class=prev href=" + prev + ".html>%s</a> <strong>Lesson %d</strong> <a  class=next href=" + next + ".html>%s</a></nav>" 
+
+    sofar = "<a id=sofar>" + ''.join(previous) + "</a>"
+
+    nav = "<nav><a id=home href=..>home</a> <a class=prev href=" + prev + ".html>%s</a> <strong>Level %d</strong> <a  class=next href=" + next + ".html>%s</a> " + sofar + "</nav>" 
     nav = nav % (prev, i, next)
    
-    h2 = "<h2>" + ''.join(previous) + "</h2>"
     
-    page = nav + u"<h1>Level %d: <span class=new_letter>%s</span></h1>\n" + h2 + "\n<ol id=level>%s</ol>"
+    page = nav + u"<h1>Level %d: <span class=new_letter>%s</span></h1>\n<ol id=level>%s</ol>"
     
     wordlist = list_to_html(words)
     page = page % (i, new_letters, wordlist)

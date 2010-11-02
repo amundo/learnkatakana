@@ -9,6 +9,7 @@ h1 {
 }
 
 h1 span.new_letter { 
+  background: white;
   padding: 7px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -16,7 +17,12 @@ h1 span.new_letter {
   color: red;
 }
 
-h2  {
+nav a#home {
+  float:left;
+  width: 20%;
+}
+
+#sofar  {
   float: right;
   width: 20%;
   color: #666;
