@@ -24,26 +24,38 @@ def regexify(prefix):
 def make_levels(words):
   levels = []
   commonest_letters = sorted_by_freq(''.join(words))
-  for i in range(1, len(commonest_letters)+1):
-    prefix = commonest_letters[:i]
-    regex =  regexify(prefix)
+  limit = len(commonest_letters)
+  for i in range(limit):
+    prefix = commonest_letters[:i+1]
     level = { 
-      'new_letter' :  prefix[-1],
-      'sofar' :  prefix,
+      'new_letter' :  commonest_letters[i],
+      'sofar' :  commonest_letters[:i],
+      'regex' :  regexify(prefix),
       'number' :  "%.2d" % i,
-      'next' :  "%.2d" % (i+1),
-      'prev' :  "%.2d" % (i-1),
-      'wordlist' :  [word for word in words if len(word) < 10 and regex.match(word)][:40]
+      'next' :  "%.2d" % (i+1) if (i < limit) else "%.2d" % 0 ,
+      'next_letter' :  commonest_letters[(i+1) % limit],
+      'prev' :  "%.2d" % (i-1) if (i > 0) else "%.2d" % 0,
+      'prev_letter' :  commonest_letters[(i-1)] if i > 1 else commonest_letters[0],
+      'wordlist' : []
     }
     levels.append( level )
-  for level in levels: print len(level['wordlist'])
+  return levels
+
+def level_words(words):
+  levels = make_levels(words)
+  for word in words:
+    for level in levels:
+      if level['regex'].match(word):
+        if len(word) < 12 and len(level['wordlist']) < 50: level['wordlist'].append(word) 
+        break 
   return levels
 
 def read_romaji2katakana(jsonfile='katakana.json'):
   rules = json.loads(open(jsonfile).read().decode('utf-8'))
   return dict(rules)
-
+0
 def convert_to_kana(romaji):
+  ruledict = read_romaji2katakana()
   return ruledict[romaji]
 
 
@@ -56,7 +68,7 @@ if __name__ == "__main__":
   word_template = Template(open('word.template').read().decode('utf-8'))
 
   words = text.split()
-  levels = make_levels(words)
+  levels = level_words(words)
 
   for level in levels:  
     level['page_title'] = 'Learn Katakana: ' + level['new_letter']

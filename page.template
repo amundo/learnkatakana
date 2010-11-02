@@ -3,6 +3,7 @@
 <head>
   <title>${page_title}</title>
   <meta charset=utf-8>
+   <link rel="shortcut icon" href="../img/favicon.ico">
     <meta property="og:title" content="Learn Katakana"/>
     <meta property="og:description" content="Learn Katakana"/>
     <meta property="og:image" content="http://learnkatakana.com/img/icon.png"/>
@@ -15,9 +16,9 @@
 <body>
 <nav>
 <a id=home href=..>home</a> 
-<a class=prev href=${prev}.html>${prev}</a> 
+<a class=prev href=${prev}.html>${prev_letter}</a> 
 <strong><span class=new_letter>${new_letter}</span></strong> 
-<a class=next href=${next}.html>${next}</a> 
+<a class=next href=${next}.html>${next_letter}</a> 
 <span id=sofar>${sofar}</span>
 </nav>
 <ol id=level>

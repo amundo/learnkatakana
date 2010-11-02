@@ -11,6 +11,7 @@ h1 {
 span.new_letter { 
   background: white;
   padding: 7px;
+  font-size: xx-large;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border: 1px solid black;
