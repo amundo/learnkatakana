@@ -59,7 +59,7 @@ if __name__ == "__main__":
 
     prev = "%.2d" % (int(i)-1)
     next = "%.2d" % (int(i)+1)
-    nav = "<nav><a class=prev href=" + prev + ".html>%s</a> <strong>Lesson %d</strong> <a  class=next href=" + next + ".html>%s</a></nav>" 
+    nav = "<nav><a id=home href=..>home</a> <a class=prev href=" + prev + ".html>%s</a> <strong>Lesson %d</strong> <a  class=next href=" + next + ".html>%s</a></nav>" 
     nav = nav % (prev, i, next)
    
     h2 = "<h2>" + ''.join(previous) + "</h2>"

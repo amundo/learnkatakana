@@ -28,11 +28,8 @@ h1 input {
 }
 
 nav {
-  bottom: 0;
  background: yellow;
-  right: 0;
   font-size: large;
-  position: fixed;
 }
 
 nav ul {
@@ -40,13 +37,10 @@ nav ul {
   padding: 0;
 }
 nav li {
-  padding: 4px;
   list-style-type:none;
 }
+
 nav a {
-  text-decoration: none;
-  color:black;
-  padding: .5em;
   line-height: 1em;
 }
 

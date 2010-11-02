@@ -9,6 +9,10 @@ h1 {
 }
 
 h1 span.new_letter { 
+  padding: 7px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid black;
   color: red;
 }
 
@@ -34,6 +38,21 @@ ol#level {
   font-size: xx-large; 
 }
 
+nav {
+  margin: 0 auto 4px;  
+  overflow:auto;
+  text-align: center;  
+  display:block;  
+  padding: 1em;
+}
+
+nav a#home, a.prev, nav a.next {
+  font-weight:bold;
+  padding: .5em;
+  margin: 0 1em;
+  text-decoration: none;
+}
+
 nav a.prev:before {
   content: "\25c0"
 
@@ -41,4 +60,8 @@ nav a.prev:before {
 
 nav a.next:after {
   content: "\25b6"
+}
+
+nav a#home {
+  float:left;
 }
