@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.0 r9654"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="icons.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -32,7 +32,7 @@
      showgrid="false"
      inkscape:window-width="1377"
      inkscape:window-height="856"
-     inkscape:window-x="63"
+     inkscape:window-x="86"
      inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <metadata
@@ -51,48 +51,43 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff2300;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.93184495;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="rect3050"
-       width="155.62311"
-       height="162.29266"
-       x="294.23569"
-       y="445.03476"
-       ry="40.017368"
-       inkscape:export-filename="/Users/pathall/Sites/learnkatakana/favicon.png"
+    <g
+       id="g11060"
+       transform="translate(97.820234,-205.64481)">
+      <rect
+         inkscape:export-ydpi="38.619999"
+         inkscape:export-xdpi="38.619999"
+         inkscape:export-filename="/Users/pathall/Sites/learnkatakana/img/icon.png"
+         ry="57.345684"
+         y="409.89679"
+         x="260.54175"
+         height="232.56862"
+         width="223.011"
+         id="rect3050"
+         style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff2300;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.93184495;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+         inkscape:export-ydpi="57.110001"
+         inkscape:export-xdpi="57.110001"
+         inkscape:export-filename="/Users/pathall/Sites/learnkatakana/favicon.png"
+         sodipodi:linespacing="125%"
+         id="text3025"
+         y="656.49841"
+         x="-225.01842"
+         style="font-size:57.86985397px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+         xml:space="preserve"><tspan
+           y="656.49841"
+           x="-225.01842"
+           id="tspan11032"
+           sodipodi:role="line">カタカナ</tspan></text>
+    </g>
+    <path
+       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff2300;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.93184494999999989;stroke-dashoffset:0;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;opacity:1"
+       d="m 160.84446,236.05516 75.58837,0 c 22.16962,0 40.01737,17.84775 40.01737,40.01737 l 0,82.25793 c 0,22.16962 -17.84775,40.01736 -40.01737,40.01736 l -75.58837,0 c -22.16963,0 -40.01737,-17.84774 -40.01737,-40.01736 l 0,-82.25793 c 0,-22.16962 17.84774,-40.01737 40.01737,-40.01737 z"
+       id="rect3055"
+       inkscape:export-filename="/Users/pathall/Sites/learnkatakana/img/favicon.png"
        inkscape:export-xdpi="57.110001"
        inkscape:export-ydpi="57.110001" />
-    <text
-       xml:space="preserve"
-       style="font-size:65.30055237px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:tb-rl;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="414.19263"
-       y="460.09692"
-       id="text3025"
-       sodipodi:linespacing="125%"
-       inkscape:export-filename="/Users/pathall/Sites/learnkatakana/favicon.png"
-       inkscape:export-xdpi="57.110001"
-       inkscape:export-ydpi="57.110001"><tspan
-         sodipodi:role="line"
-         id="tspan3027"
-         x="374.00449"
-         y="500.28506"
-         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-family:Hiragino Kaku Gothic StdN;-inkscape-font-specification:Hiragino Kaku Gothic StdN Ultra-Bold">カタ</tspan><tspan
-         sodipodi:role="line"
-         x="374.00449"
-         y="418.65936"
-         id="tspan3029"
-         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-family:Hiragino Kaku Gothic StdN;-inkscape-font-specification:Hiragino Kaku Gothic StdN Ultra-Bold">カナ</tspan></text>
-    <rect
-       inkscape:export-ydpi="57.110001"
-       inkscape:export-xdpi="57.110001"
-       inkscape:export-filename="/Users/pathall/Sites/learnkatakana/favicon.png"
-       ry="40.017368"
-       y="236.05516"
-       x="120.82709"
-       height="162.29266"
-       width="155.62311"
-       id="rect3055"
-       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff2300;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.93184495;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
     <text
        inkscape:export-ydpi="57.110001"
        inkscape:export-xdpi="57.110001"

@@ -50,7 +50,7 @@ if __name__ == "__main__":
   current = set(levels[0][0])
 
   for i, (key, regex, words)  in enumerate(levels):
-    wrapper = open('/Users/pathall/.skel/html5/page').read().decode('utf-8')
+    wrapper = open('page.template').read().decode('utf-8')
     wrapper = wrapper.replace('<body>', '<body>%s')
 
     previous = current
@@ -59,7 +59,7 @@ if __name__ == "__main__":
 
     prev = "%.2d" % (int(i)-1)
     next = "%.2d" % (int(i)+1)
-    nav = "<nav><a href=" + prev + ".html>%s</a> <strong>Lesson %d</strong> <a href=" + next + ".html>%s</a></nav>" 
+    nav = "<nav><a class=prev href=" + prev + ".html>%s</a> <strong>Lesson %d</strong> <a  class=next href=" + next + ".html>%s</a></nav>" 
     nav = nav % (prev, i, next)
    
     h2 = "<h2>" + ''.join(previous) + "</h2>"

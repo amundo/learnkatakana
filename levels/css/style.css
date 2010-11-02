@@ -33,3 +33,12 @@ ol#level {
   text-decoration: none;
   font-size: xx-large; 
 }
+
+nav a.prev:before {
+  content: "\25c0"
+
+}
+
+nav a.next:after {
+  content: "\25b6"
+}

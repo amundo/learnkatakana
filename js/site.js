@@ -22,4 +22,6 @@ $(function(){
 
   })
 
+  $('ol#level').shuffle();
+
 })
