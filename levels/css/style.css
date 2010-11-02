@@ -31,9 +31,13 @@ nav a#home {
 }
 
 ol#level { 
-  clear:both;
-  text-align: center;
+  float:left;
+  width: 50%;
 } 
+
+ol#level li { 
+  text-align: center;
+}
 
 #level li { 
   list-style-type: none;
