@@ -36,7 +36,7 @@ def make_levels(words):
       'next' :  "%.2d" % (i+1) if (i < limit) else "%.2d" % 0 ,
       'next_letter' :  commonest_letters[(i+1) % limit],
       'prev_letter' :  commonest_letters[(i-1)] if i > 1 else commonest_letters[0],
-      'wordlist' : []
+      'wordlist' : [],
       'prev' :  "%.2d" % (i-1) if (i > 0) else "%.2d" % 0,
     }
     levels.append( level )
@@ -62,8 +62,10 @@ def romaji2kana(romaji):
 def invert_dict(d):
   return dict([(v,k) for k,v in d.items()])
 
-def kana2romaji(romaji):
-  return invert_dict(read_romaji2katakana())
+def kana2romaji(kana):
+  ruledict = invert_dict(read_romaji2katakana())
+  if kana in ruledict:  return ruledict[kana]
+  else: return kana
 
 if __name__ == "__main__":
 
