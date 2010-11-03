@@ -1,3 +1,29 @@
+function getWikipediaSummary(language, query) {
+  $.ajax({
+    url: 'http://' + language + '.wikipedia.org/w/api.php',
+    data: {
+      action:'parse',
+      prop: 'text',
+      page: query,
+      format:'json'
+    },
+    dataType:'jsonp',
+    success: function(data) {
+      $("<div>"+data.parse.text['*']+"</div>").children('p:first').prependTo('#thumbs');
+    }
+  });
+}
+
+function links(query){
+  var linkList = [], hrefs = [];
+  hrefs.push(['Wikipedia', 'http://ja.wikipedia.org/wiki/' + query]);
+  hrefs.push(['Flickr', 'http://www.flickr.com/search/?q=' + query]);
+  hrefs.push(['Tangorin', 'http://tangorin.com/general/' + query]);
+  for(var i=0; i<hrefs.length; i++){
+    linkList.push(hrefs[i][0].link(hrefs[i][1]))
+  };
+  return linkList.join(' ');
+}
 
 function searchFlickr(query){
   var $thumbs = $('#thumbs');
@@ -7,12 +33,14 @@ function searchFlickr(query){
     function(data){
       $thumbs.html("<h2>\u3010" + query + "\u3011</h2>");
       if(data.items.length == 0) { $thumbs.html('<h1>Sorry, no pics for <br>\u3010' + query + '\u3011. <br/>:(</h1>')} 
+      $thumbs.prepend('<p>try: ' + links(query) + '</p>');
       $.each(data.items, function(i,item){
         var img = $('<img class="thumb" />').attr({"author": item.author, "src": item.media.m, "href": item.link}).appendTo($thumbs);
         //img.appendTo($thumbs);
         if ( i == 40 ) return false;
       });
    });
+  getWikipediaSummary('ja', query);
 
 }
 
