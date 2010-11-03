@@ -29,14 +29,15 @@ def make_levels(words):
     prefix = commonest_letters[:i+1]
     level = { 
       'new_letter' :  commonest_letters[i],
+      'romaji' :  kana2romaji(commonest_letters[i]),
       'sofar' :  commonest_letters[:i],
       'regex' :  regexify(prefix),
       'number' :  "%.2d" % i,
       'next' :  "%.2d" % (i+1) if (i < limit) else "%.2d" % 0 ,
       'next_letter' :  commonest_letters[(i+1) % limit],
-      'prev' :  "%.2d" % (i-1) if (i > 0) else "%.2d" % 0,
       'prev_letter' :  commonest_letters[(i-1)] if i > 1 else commonest_letters[0],
       'wordlist' : []
+      'prev' :  "%.2d" % (i-1) if (i > 0) else "%.2d" % 0,
     }
     levels.append( level )
   return levels
@@ -53,11 +54,16 @@ def level_words(words):
 def read_romaji2katakana(jsonfile='katakana.json'):
   rules = json.loads(open(jsonfile).read().decode('utf-8'))
   return dict(rules)
-0
-def convert_to_kana(romaji):
+
+def romaji2kana(romaji):
   ruledict = read_romaji2katakana()
   return ruledict[romaji]
 
+def invert_dict(d):
+  return dict([(v,k) for k,v in d.items()])
+
+def kana2romaji(romaji):
+  return invert_dict(read_romaji2katakana())
 
 if __name__ == "__main__":
 
