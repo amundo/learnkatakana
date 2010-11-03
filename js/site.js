@@ -6,7 +6,7 @@ function searchFlickr(query){
   $.getJSON(url,
     function(data){
       $thumbs.html("<h2>\u3010" + query + "\u3011</h2>");
-      if(data.items.length == 0) { $thumbs.html('<h1>sorry pics for</h1><h2>\u3010' + query + '\u3011 :(</h2>')} 
+      if(data.items.length == 0) { $thumbs.html('<h1>Sorry, no pics for</h1><h2>\u3010' + query + '\u3011. :(</h2>')} 
       $.each(data.items, function(i,item){
         var img = $('<img class="thumb" />').attr({"author": item.author, "src": item.media.m, "href": item.link}).appendTo($thumbs);
         //img.appendTo($thumbs);
