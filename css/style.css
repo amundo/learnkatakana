@@ -2,6 +2,13 @@ body {
   margin: 0; 
   padding: 0; 
   font-family:sans-serif;
+  height: 100vh;
+  display:grid;
+  grid-template-areas:
+    "header header" 
+    "kana   photos";
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 h1{ 
@@ -29,6 +36,7 @@ h1 input {
 
 nav {
  background: yellow;
+ grid-area:header;
   font-size: large;
 }
 
@@ -42,23 +50,6 @@ nav li {
 
 nav a {
   line-height: 1em;
-}
-
-#main { 
-  overflow:auto;
-}
-
-#demo { 
-  float:right;
-  width: 40%;
-}
-
-#narration { 
-  padding: 2em;
-  font-size: large;
-  line-height: 120%;
-  width: 40%; 
-  float:left;
 }
 
 table#katakana { 
